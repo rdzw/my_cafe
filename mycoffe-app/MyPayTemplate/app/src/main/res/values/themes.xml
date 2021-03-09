@@ -1,0 +1,72 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- SOBRE TEMAS  -->
+    <!--
+        O seu app deve seguir um esquema de cores padrão, as cores para cada componente já são
+        definidas pelas diretrizes do Material Design.
+
+        Existem, porém, diferentes estilos para cada componente. Por exemplo, para "MaterialButton",
+        você pode usar 4 tipos diferentes.
+
+        O nome do estilo (ex. abaixo AppTheme) é uma variável usada em outras partes do código.
+        Esse primeiro estilo está referenciado no manifesto do app, todos os componentes usarão
+        as variáveis de cores definidas aqui.
+
+        Mais detalhes sobre o que é cada cor: https://material.io/design/color/the-color-system.html#color-theme-creation
+    -->
+    <!-- ====================================================================================== -->
+    <!-- BASE THEME -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- ======================= -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#6C341C</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <!-- ======================= -->
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- ======================= -->
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!-- ======================= -->
+        <!-- TEXT CUSTOMIZATIONS -->
+        <item name="textAppearanceSubtitle1">@style/text.subtitle1</item>
+
+    </style>
+
+    <!-- ====================================================================================== -->
+    <!-- BOTTOM NAVIGATION -->
+    <!-- Exemplo de customização do Bottom Navigation -->
+    <!-- ============================================ -->
+<!--    <style name="bottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">-->
+<!--        <item name="materialThemeOverlay">@style/overlay.bottomNavigation</item>-->
+<!--    </style>-->
+
+<!--    <style name="overlay.bottomNavigation" parent ="">-->
+<!--        <item name="colorPrimary">@color/menu_gray</item>-->
+<!--        <item name="colorOnPrimary">@color/white</item>-->
+<!--    </style>-->
+
+    <!-- ====================================================================================== -->
+    <!-- OUTLINED BUTTON -->
+    <style name="outlinedButton.Red" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="materialThemeOverlay">@style/overlay.outlinedButton</item>
+    </style>
+
+    <style name="overlay.outlinedButton" parent="">
+        <item name="colorPrimary">@color/text_red</item>
+        <item name="android:layout_width">@dimen/elements_width</item>
+    </style>
+
+    <!-- ====================================================================================== -->
+    <!-- TEXT: SUBTITLE 1 -->
+    <style name="text.subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+</resources>

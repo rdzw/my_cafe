@@ -1,0 +1,131 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+
+    /*************************************************************
+     * ROOM KAPT
+     * ******************/
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    /**
+     * OBSERVAÇÃO
+     * versão do android mínimo deve 21, pois só assim as libs da maquininha funcionam bem
+     */
+    defaultConfig {
+        applicationId "br.uea.transirie.mypay.mypaytemplate2"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        /*************************************************************
+         * JAVA 8 DESUGARING (libera uso do java.time)
+         * ******************/
+        coreLibraryDesugaringEnabled true
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    /*************************************************************
+     * PARA LIBS DA MAQUINIHA
+     * ******************
+     * Só descomentar no final, quando estiver tudo pronto
+     * */
+//    ndk {
+//        abiFilters "arm64-v8a", "armeabi-v7a", "x86", "x86_64"
+//    }
+
+    /*************************************************************
+     * VIEW BINDIG
+     * ******************/
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    /*************************************************************
+     * PARA LIBS DA MAQUINIHA
+     * ******************
+     * Só descomentar no final, quando estiver tudo pronto
+     * */
+//    implementation fileTree(dir: "libs", include: ["*.jar"])
+//    implementation files('libs/easypaymentpos-debug.aar')
+//    api files('libs/PPCompAndroid-v1.45.aar')
+//    implementation files('libs/receipt-release.aar')
+
+    /*************************************************************
+     * ROOM
+     * *******************/
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    /*************************************************************
+     * CHAMADAS ASSÍNCRONAS COM doAsync do Anko
+     * *******************/
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+
+    /*************************************************************
+     * COROUTINES
+     * *******************/
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+
+    /*************************************************************
+     * JAVA 8 DESUGARING (libera uso do java.time)
+     * ******************
+     * Permite usar bibliotecas do Java 8 em Android antigo como o da maquininha.
+     * Especialmente útil para as libs de tempo: java.time
+     * Detalhes: https://developer.android.com/studio/write/java8-support
+     * */
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.1'
+
+    /*************************************************************
+     * ViewModel e LiveData
+     * *******************
+     * Caso resolva usar essas estruturas mais avançadas e que podem
+     * facilitar o desenvolvimento
+     * Detalhes 1: https://developer.android.com/jetpack/androidx/releases/lifecycle
+     * Detalhes 2: https://developer.android.com/jetpack/androidx/releases/activity
+     **************************************************************/
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+//    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+//    implementation "androidx.activity:activity-ktx:$activity_version"
+
+    /*************************************************************
+     * DEPENDÊNCIAS PADRÃO
+     * *******************
+     * Note que o Android Studio 4.1 já inclui a biblioteca de Material
+     * Design ao criar novo projeto
+     **************************************************************/
+    api 'com.google.android.material:material:1.3.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

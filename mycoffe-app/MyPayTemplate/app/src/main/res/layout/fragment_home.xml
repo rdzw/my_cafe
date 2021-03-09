@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btLogin2"
+        android:layout_width="@dimen/squared_button"
+        android:layout_height="@dimen/squared_button"
+        android:layout_marginStart="64dp"
+        android:text="NOVO PEDIDO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <!-- Esse botão usa um estilo customizado descendente de um dos estilos padrões de botão -->
+    <Button
+        android:id="@+id/btCadastrarOutline"
+        style="@style/outlinedButton.Red"
+        android:layout_width="@dimen/squared_button"
+        android:layout_height="@dimen/squared_button"
+        android:layout_marginStart="44dp"
+        android:text="EXEMPLO CUSTOM"
+        app:layout_constraintBottom_toBottomOf="@+id/btLogin2"
+        app:layout_constraintStart_toEndOf="@+id/btLogin2"
+        app:layout_constraintTop_toTopOf="@+id/btLogin2"
+        app:layout_constraintVertical_bias="0.417" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

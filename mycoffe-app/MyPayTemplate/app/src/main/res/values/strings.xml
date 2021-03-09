@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MyPayTemplate2</string>
+    <string name="home">Home</string>
+    <string name="caixa">Caixa</string>
+    <string name="historico">Histórico</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="imgdesc_icone_celular">Ícone de celular</string>
+    <string name="bem_vindo">Bem vindo ao MeuNegócio</string>
+    <string name="slogan">Seu negócio na sua mão.</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="faca_login">FAÇA SEU LOGIN</string>
+    <string name="login">Login</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="email">Email</string>
+    <string name="esqueci_minha_senha">ESQUECI MINHA SENHA</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="desc_editar_servico">Editar Serviço</string>
+    <string name="desc_deletar_servico">Deletar Serviço</string>
+    <string name="senha">Senha</string>
+    <string name="editar_senha">Editar senha</string>
+    <string name="servicos_cadastrados">Serviços Cadastrados</string>
+    <string name="editar_servicos">Editar serviços</string>
+    <string name="sobre_o_aplicativo">Sobre o aplicativo</string>
+    <string name="sair_do_aplicativo">Sair do aplicativo</string>
+    <string name="ajuda">Ajuda</string>
+    <string name="editar_dados">Editar dados</string>
+    <string name="dados_cadastrados">Dados Cadastrados</string>
+    <string name="minha_empresa">Minha Empresa</string>
+    <string name="preco">Preço</string>
+    <string name="digite_preco">Digite o Novo Preço</string>
+    <string name="ok">OK</string>
+    <string name="confirmacao">Confirmação</string>
+    <string name="pergunta_realmente_remover">Realmente Remover?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+</resources>
